@@ -122,6 +122,7 @@ class Custom_Content_List_Admin {
 						},
 						success:function(data){
 							jQuery('#ccl_terms').show('fast');
+							jQuery('#ccl_terms option:not(option:first)').remove();
 							if (  typeof data == 'object' ) {
 								var i = 0;
 								var dataLength = data.length;
@@ -178,7 +179,6 @@ class Custom_Content_List_Admin {
 			die(json_encode(array()));
 		
 		$terms = get_terms( $_GET['taxonomy'], array( 'hide_empty ' => true ) );
-		
 		if ( !empty( $terms ) )
 			die( json_encode($terms) );
 		
