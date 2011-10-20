@@ -30,6 +30,6 @@ Allow to create custom lists of content based on post types, taxonomies and othe
 
 * 1.0
 	* First release.
-. 1.0.1
+* 1.0.1
 	* Fix bug on term selection
 	* Add screenshots
