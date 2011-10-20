@@ -8,7 +8,7 @@ Stable tag: 1.0.1
 
 == Description ==
 
-Allow to create custom lists of content based on post types, taxonomies and others params. It uses a lightbox and generate a shortcode. Esay to use.
+Allow to create custom lists of content based on post types, taxonomies and others parameters. It uses a lightbox and generate a shortcode. Easy to use.
 
 == Installation ==
 
