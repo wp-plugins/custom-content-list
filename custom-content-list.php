@@ -3,7 +3,7 @@
 Plugin Name: Custom Content List
 Plugin URI: http://benjamin-niess.fr
 Description: Allow to create custom lists of content based on post types, taxonomies and others params
-Version: 1.0.1
+Version: 2.0
 Author: Benjamin Niess
 Author URI: http://benjamin-niess.fr
 Text Domain: ccl
@@ -24,24 +24,28 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-define( 'CCL_URL', plugins_url('', __FILE__) );
-define( 'CCL_DIR', dirname(__FILE__) );
+// don't load directly
+if ( !defined('ABSPATH') ) {
+	die('-1');
+}
 
-require( CCL_DIR . '/inc/class.client.php');
-require( CCL_DIR . '/inc/class.admin.php');
+define( 'CCL_URL', plugin_dir_url ( __FILE__ ) );
+define( 'CCL_DIR', plugin_dir_path( __FILE__ ) );
+
+require( CCL_DIR . 'inc/class.client.php');
+
 
 // Init the plugin
 function Custom_Content_list_Init() {
-	global $CustomContentList;
-	
-	load_plugin_textdomain( 'ccl', false, basename(rtrim(dirname(__FILE__), '/')) . '/languages' );
+	load_plugin_textdomain( 'ccl', false, basename( rtrim( dirname( __FILE__ ), '/') ) . '/languages' );
 
 	// Load client
-	$CustomContentList['client'] = new Custom_Content_List_Client();
+	new Custom_Content_List_Client();
 	
 	// Load admin
-	if ( is_admin() )
-		$CustomContentList['admin'] = new Custom_Content_List_Admin();
+	if ( is_admin() ) {
+		require( CCL_DIR . 'inc/class.admin.php');
+		new Custom_Content_List_Admin();
+	}
 }
 add_action( 'plugins_loaded', 'Custom_Content_list_Init' );
-?>
