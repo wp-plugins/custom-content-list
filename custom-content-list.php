@@ -3,7 +3,7 @@
 Plugin Name: Custom Content List
 Plugin URI: http://benjamin-niess.fr
 Description: Allow to create custom lists of content based on post types, taxonomies and others params
-Version: 2.0
+Version: 2.0.1
 Author: Benjamin Niess
 Author URI: http://benjamin-niess.fr
 Text Domain: ccl

@@ -4,7 +4,7 @@ Donate link: http://beapi.fr/donate
 Tags: list, ul, li, post, type, taxonomy, custom
 Requires at least: 3.1
 Tested up to: 3.7.1
-Stable tag: 2.0
+Stable tag: 2.0.1
 
 == Description ==
 
@@ -28,6 +28,8 @@ Allow to create custom lists of content based on post types, taxonomies and othe
 
 == Changelog ==
 
+* 2.0.1
+	* Reset initial loop after showing the list
 * 2.0
 	* Code refactoring
 * 1.0.1

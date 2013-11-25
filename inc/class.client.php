@@ -64,8 +64,7 @@ class Custom_Content_List_Client {
 		
 		if ( !empty( $order ) ) {
 			$args['order'] = $order;
-			}
-		
+		}
 		
 		// The WP Query
 		$list_query = new WP_Query( $args );
@@ -76,6 +75,7 @@ class Custom_Content_List_Client {
 		// Get the tpl in the plugin folder or in theme folder
 		$tpl = Custom_Content_List_Client::get_template( 'list' );
 		if ( empty( $tpl ) ) {
+			wp_reset_postdata();
 			return false;
 		}
 		
@@ -85,6 +85,8 @@ class Custom_Content_List_Client {
 		
 		$content = ob_get_contents();
 		ob_end_clean();
+		
+		wp_reset_postdata();
 		
 		return $content;
 	}
